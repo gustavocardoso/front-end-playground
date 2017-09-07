@@ -1,0 +1,22 @@
+---
+layout: default
+---
+<article class="post">
+
+  <header class="post-header">
+    <h2>{{ page.hello }}</h2>
+    <h1 class="post-title">{{ page.title | escape }}</h1>
+    {% for tag in page.tags %}
+      <h3>{{ tag }}</h3>
+    {% endfor %}
+  </header>
+
+  <div class="post-content">
+    {{ content }}
+  </div>
+
+  {% if page.show_footer %}
+    <footer>Page by Gustavo Cardoso</footer>
+  {% endif %}
+
+</article>
