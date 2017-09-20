@@ -14,6 +14,7 @@
 # You can create any custom variable you would like, and they will be accessible
 # in the templates via {{ site.myvariable }}.
 title: Front-End Playground
+author: Gustavo Cardoso
 email: gustavocardoso@gmail.com
 description: "A simple sandbox to play with html, css and javascript."
 baseurl: "/front-end-playground" # the subpath of your site, e.g. /blog
@@ -24,7 +25,6 @@ github_username:  gustavocardoso
 # Build settings
 markdown: kramdown
 permalink: /:categories/:title
-theme: minima
 plugins:
   - jekyll-feed
 

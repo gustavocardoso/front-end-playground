@@ -1,0 +1,125 @@
+%basic-article {
+  position: relative;
+  background: $grey-color;
+  box-shadow: 0 3px 10px rgba(0,0,0,0.2);
+  margin: 0 auto;
+  padding: 2.5em;
+
+  .inner-content {
+    margin-bottom: 6em;
+  }
+
+  .subtitle {
+    display: inline-block;
+    font-family: $style-font;
+    font-size: 1.8em;
+    font-weight: 700;
+    color: $highlight-color;
+    text-shadow: 0 1px 3px rgba(0,0,0,0.5);
+    margin-bottom: 1.2em;
+  }
+
+  .sub-subtitle {
+    display: inline-block;
+    font-size: 1.4em;
+    color: $light-grey-color;
+    background: $dark-color;
+    margin-bottom: 1.2em;
+    padding: .1em .4em;
+  }
+
+  h4 {
+    font-size: 1.2em;
+    color: $light-color;
+  }
+
+  .experiment {
+    margin-top: 60px;
+  }
+
+  p {
+    font-size: 1.2em;
+    font-weight: 300;
+    line-height: 1.5;
+    color: $base-color;
+    margin-bottom: 30px;
+
+    &:last-child {
+      margin-bottom: 0;
+    }
+
+    strong {
+      font-weight: 700;
+
+      &.highlight {
+        color: $highlight-color;
+      }
+    }
+
+    &.box-message {
+      font-weight: 400;
+      background: #333;
+      border-radius: 15px;
+      box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.2) inset;
+      padding: 20px;
+    }
+
+    a {
+      font-weight: 700;
+      color: $light-color;
+      border-bottom: 1px dotted $light-color;
+
+      &:hover {
+        color: $base-color;
+        border-bottom: 1px dotted $base-color;
+      }
+    }
+  }
+
+  pre {
+    border-radius: 15px !important;
+    margin-bottom: 40px !important;
+  }
+
+  .text-list {
+    list-style: square inside;
+    margin-bottom: 40px;
+
+    li {
+      margin-bottom: 20px;
+    }
+  }
+
+  .comments {
+    background: darken($grey-color, 2%);
+    margin: 0 auto;
+    padding: 2em;
+
+    .publisher-nav-color::after {
+      background: #c03 !important;
+    }
+  }
+}
+
+%basic-button {
+  display: inline-block;
+  width: 200px;
+  font-family: $style-font;
+  font-size: 1.4em;
+  font-weight: 700;
+  text-transform: uppercase;
+  color: $base-color;
+  text-shadow: 0 2px 0 rgba(0, 0, 0, 0.4);
+  background: #9c0;
+  border-radius: 10px;
+  margin: 0 auto 20px auto;
+  padding: 10px;
+  cursor: pointer;
+}
+
+%app-box {
+  text-align: center;
+  background: #222;
+  border-radius: 15px;
+  padding: 20px;
+}

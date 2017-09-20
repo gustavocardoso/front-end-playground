@@ -1,7 +1,7 @@
 ---
 layout: default
 ---
-<p class="site-description">Uma simples 'sandbox' para brincar com html, css e javascript!</p>
+<p class="site-description">{{ site.description | escape }}</p>
 
 <p>
   Há algum tempo, venho fazendo vários <strong>pequenos experimentos</strong> para manter meus estudos com <strong class="highlight">html, css e javascript</strong>. Depois de ter feito algumas "coisinhas legais", resolvi colocar tudo no <a href="https://github.com/gustavocardoso/front-end-playground">Github</a> e compartilhar com quem esteja <strong>interessado em aprender</strong>.
@@ -19,44 +19,20 @@ layout: default
   Se você gostou, pode fazer um fork no <a href="https://github.com/gustavocardoso/front-end-playground">Github</a> ou mesmo contribuir com o projeto.
 </p>
 
-<section class="experiments">
-  <section class="box">
-    <h2 class="subtitle">CSS</h2>
-    <ul class="experiments-list">
-      <li class="item"><a href="examples/html-css/ribbon.html">Ribbon</a></li>
-      <li class="item"><a href="examples/html-css/simple-carousel.html">Simple Carousel</a></li>
-    </ul>
-  </section>
-
-  <ection class="box">
-    <h2 class="subtitle">Javascript</h2>
-    <ul class="experiments-list">
-      <li class="item"><a href="examples/javascript/device-light.html">Device Light</a></li>
-      <li class="item"><a href="examples/javascript/speech-recognition.html">Speech Recognition</a></li>
-      <li class="item"><a href="examples/javascript/vibration.html">Vibration</a></li>
-    </ul>
-  </ection>
-</section>
-<!-- <div class="home">
-
-  <h1 class="page-heading">Posts</h1>
-  
-  {{ content }}
-
-  <ul class="post-list">
-    {% for post in site.posts %}
-      <li>
-        {% assign date_format = site.minima.date_format | default: "%b %-d, %Y" %}
-        <span class="post-meta">{{ post.date | date: date_format }}</span>
-
-        <h2>
-          <a class="post-link" href="{{ post.url | relative_url }}">{{ post.title | escape }}</a>
-        </h2>
-      </li>
+{% if site.categories.size > 0 %}
+  <section class="experiments">
+    {% for category in site.categories %}
+      <section class="box">
+        <h2 class="subtitle">{{ category | first | capitalize }}</h2>
+        <ul class="experiments-list">
+          {% for post in category[1] %}
+            <li class="item">
+              <a href="{{ post.url | relative_url }}">{{ post.title | escape }}</a>
+              <span>{{ post.date | date_to_string }}</span>
+            </li>
+          {% endfor %}
+        </ul>
+      </ection>
     {% endfor %}
-  </ul>
-
-  <p class="rss-subscribe">subscribe <a href="{{ "/feed.xml" | relative_url }}">via RSS</a></p>
-
-</div>
- -->
+  </section>
+{% endif %}

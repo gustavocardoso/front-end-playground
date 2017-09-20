@@ -1,0 +1,198 @@
+@import 'config';
+@import 'helpers/reset';
+@import 'placeholders/typograph';
+@import 'placeholders/modules';
+
+body {
+  font-family: $main-font;
+  font-size: 16px;
+  line-height: 1.5;
+  background: $dark-color;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+a {
+  text-decoration: none;
+  transition: all 0.3s;
+  color: $light-color;
+
+  &:hover {
+    color: $base-color;
+  }
+}
+
+ul {
+  list-style-position: inside;
+}
+
+.main-header {
+  padding: 3em 2.5em;
+}
+
+.site-title {
+  i {
+    font-size: 1em;
+    color: $style-color;
+  }
+}
+
+.home-link {
+  @extend %site-title;
+  font-size: 1em;
+  color: $highlight-color;
+  margin: 0;
+
+  .site-title-highlight {
+    font-weight: 400;
+    letter-spacing: -.090em;
+    color: $light-color;
+  }
+}
+
+.article {
+  @extend %basic-article;
+
+  p {
+    &.phrase {
+      font-size: 1em;
+      font-weight: 500;
+      color: $light-grey-color;
+      margin: 0 0 20px 0;
+    }
+
+    &.phrase-result {
+      font-weight: 500;
+      margin: 20px 0 0 0;
+    }
+
+    &.phrase-success {
+      color: #9c0;
+    }
+
+    &.phrase-error {
+      color: $style-color;
+    }
+
+    &.site-description {
+      font-size: 1.6em;
+      font-weight: 300;
+    }
+  }
+
+  .btn {
+    @extend %basic-button;
+
+    &:active {
+      color: $base-color;
+      background: $style-color;
+    }
+  }
+}
+
+.experiments {
+  display: flex;
+  flex-direction: column;
+
+  .box {
+    width: 100%;
+  }
+
+  .experiments-list {
+    list-style: none;
+    font-size: 1em;
+    margin-bottom: 2em;
+
+    .item {
+      &:before {
+        display: inline-block;
+        font-family: 'FontAwesome';
+        color: $style-color;
+        content: '\f005';
+        margin-right: .4em;
+      }
+    }
+
+    a {
+      color: $light-color;
+
+      &:hover {
+        color: $base-color;
+      }
+    }
+  }
+}
+
+.app-box {
+  @extend %app-box;
+}
+
+.main-footer {
+  padding: 2.5em;
+
+  p {
+    font-size: 1.2em;
+    font-weight: 300;
+    color: $base-color;
+  }
+
+  strong {
+    color: $style-color;
+  }
+
+  a {
+    color: $light-color;
+    border-bottom: 1px dotted $dark-grey-color;
+
+    &:hover {
+      color: $base-color;
+      border-bottom: 1px dotted $base-color;
+    }
+  }
+}
+
+@media screen and (min-width: $medium-size) {
+  .site-title {
+    i {
+      font-size: 1.2em;
+      color: $style-color;
+    }
+  }
+
+  .home-link {
+    font-size: 1.6em;
+  }
+
+  .experiments {
+    flex-direction: row;
+
+    .box {
+      width: 50%;
+    }
+  }
+}
+
+@media screen and (min-width: $large-size) {
+  .main-header {
+    padding: 3em 4.5em;
+  }
+
+  .site-title {
+    i {
+      font-size: 1.6em;
+      color: $style-color;
+    }
+  }
+
+  .home-link {
+    font-size: 2.2em;
+  }
+
+  .article {
+    padding: 4.5em;
+  }
+
+  .main-footer {
+    padding: 2.5em 4.5em;
+  }
+}

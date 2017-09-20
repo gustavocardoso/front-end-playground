@@ -1,0 +1,26 @@
+@import 'config';
+@import 'placeholders/modules';
+
+.app-talk-text {
+  @extend %app-box;
+
+  .btn {
+    &.recording {
+      background: #c03;
+    }
+
+    &.play {
+      width: 60px;
+      background: #444;
+      margin-left: 20px;
+    }
+  }
+
+  .text-receiver {
+    width: 100%;
+    font-size: 1.4em;
+    text-align: center;
+    border-radius: 15px;
+    padding: 20px;
+  }
+}

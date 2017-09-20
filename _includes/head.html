@@ -1,16 +1,21 @@
 <head>
-  <meta charset="utf-8">
+  <meta charset="UTF-8">
+  <title>{% if page.title %}{{ page.title | escape }} | {% endif %}{% if post.title %}{{ post.title | escape }} | {% endif %}{{ site.title | escape }}</title>
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-
-  <title>{% if page.title %}{{ page.title | escape }}{% else %}{{ site.title | escape }}{% endif %}</title>
   <meta name="description" content="{{ page.excerpt | default: site.description | strip_html | normalize_whitespace | truncate: 160 | escape }}">
-
-  <link rel="stylesheet" href="{{ "/assets/main.css" | relative_url }}">
+  
+  <link href="http://fonts.googleapis.com/css?family=Roboto:300,400,500,700,900|Roboto+Condensed|Alegreya:400,700,900" rel="stylesheet" type="text/css" />
+  <script src="https://use.fontawesome.com/d97d1aa281.js"></script>
+  <link rel="stylesheet" href="{{ "/assets/css/base.css" | relative_url }}">
+  <!-- <link rel="stylesheet" href="{{ "/assets/css/highlight.css" | relative_url }}"> -->
+  {% if page.css_file %}
+    <link rel="stylesheet" href="{{ page.css_file | relative_url }}">
+  {% endif %}
   <link rel="canonical" href="{{ page.url | replace:'index.html','' | absolute_url }}">
   <link rel="alternate" type="application/rss+xml" title="{{ site.title | escape }}" href="{{ "/feed.xml" | relative_url }}">
   
   {% if jekyll.environment == 'production' and site.google_analytics %}
-  {% include google-analytics.html %}
+    {% include google-analytics.html %}
   {% endif %}
 </head>
